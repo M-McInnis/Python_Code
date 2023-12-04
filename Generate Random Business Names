@@ -1,0 +1,38 @@
+import pandas as pd
+import random
+
+# List of English words to use for generating business names
+word_list = ["Aqua", "Zen", "Orbit", "Pixel", "Ridge", "Echo", "Quest", "Nova", "Edge", "Bloom",
+             "Drift", "Craft", "Glow", "Sage", "Thrive", "Peak", "Bliss", "Flare", "Pure", "Vivid",
+             "Spark", "Charm", "Swift", "Bright", "Breeze", "Flow", "Beam", "Grace", "Haven", "Pulse",
+             "Cloud", "Forge", "Pioneer", "Nest", "Crave", "Harbor", "Infinite", "Journey", "Rise", "Crest",
+             "Fusion", "Maven", "Vista", "Pace", "Verve", "Surge", "Rapid", "Impact", "Trust", "Prosper",
+             "Vital", "Avid", "Elite", "Inspire", "Clever", "Relish", "Momentum", "Gleam", "Summit", "Trend",
+             "Aspire", "Genius", "Harvest", "Venture", "Roar", "Luxe", "Empower", "Zoom", "Path", "Vision",
+             "Sprint", "Balance", "Nourish", "Thrive", "Elevate", "Illuminate", "Radiant", "Dynamic", "Advance", "Gusto",
+             "Vanguard", "Streamline", "Boost", "Alpha", "Connect", "Innovate", "Evolve", "Energize", "Discover", "Imagine",
+             "Amplify", "Synergy", "Quantum", "Velocity", "Vitality", "Revive", "Fathom", "Mingle", "Flourish", "Ignite"]
+
+# Function to generate business names
+def generate_business_names(n):
+    names = set()
+    while len(names) < n:
+        # Using a single word or two words randomly
+        if random.choice([True, False]):
+            name = random.choice(word_list)
+        else:
+            name = random.choice(word_list) + " " + random.choice(word_list)
+        names.add(name)
+    return list(names)
+
+# Generate 1343 unique business names
+business_names = generate_business_names(*/Insert # of names to generate here*/)
+
+# Convert to a DataFrame
+df = pd.DataFrame(business_names, columns=["Business Name"])
+
+# Save to an Excel file
+excel_path = '/mnt/data/Business_Names.xlsx'
+df.to_excel(excel_path, index=False)
+
+excel_path
